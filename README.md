@@ -24,12 +24,12 @@ All assets use relative paths, so the same directory also works at a custom doma
 
 - `index.html`: text, authors, research figures, public paper links, BibTeX.
 - `style.css`: responsive layout, colours, typography.
-- `app.js`: video tabs, excerpt playback, citation copy, navigation state.
+- `app.js`: video tabs, citation copy, navigation state.
 - `assets/`: self-hosted images and videos (WebM with MP4 fallback). No Google Fonts, CDN scripts, YouTube, Google Drive embeds, analytics, or third-party runtime libraries.
 
-Videos are presented with `object-fit: contain`; the original portrait, square, and landscape aspect ratios are preserved. The four complete videos use the repository's current supplementary source files and retain those files' timing and audio. The silent hero is a 21.5-second montage of autonomous ACT-Tac manipulation: cube rotation (Google Sites Video 3, 28.6–37.1 s), followed by potato-chip pick-and-place (Google Sites Video 4, 21.5–34.5 s). It preserves source speed and uses padding rather than cropping when the source aspect ratio differs. The source precision video contains a 2× annotation; the website does not relabel it as real-time.
+Videos are presented with `object-fit: contain`; the original portrait, square, and landscape aspect ratios are preserved. The four complete videos use the repository's current supplementary source files and retain those files' timing and audio. The source precision video contains a 2× annotation; the website does not relabel it as real-time.
 
-Autoplay is limited to a muted, visible hero excerpt. Reduced-motion and data-saving preferences disable automatic playback. The full videos load on demand through native HTML video controls. Readers can open MP4 files directly if their browser cannot play the inline video.
+The opening is static: a title, project introduction, demonstration link, and the 17-DoF / four-fingertip highlights. No video autoplays or loads in the hero. The four full videos in the demonstrations section load on demand through native HTML video controls. Readers can open MP4 files directly if their browser cannot play the inline video.
 
 ## Access and hosting
 
