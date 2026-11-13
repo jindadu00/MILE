@@ -28,7 +28,9 @@
   const tabs = [...document.querySelectorAll('[data-demo]')];
   const demo = document.getElementById('demo-video');
   const panel = document.getElementById('demo-panel');
-  const demoSource = demo.querySelector('source');
+  const demoSources = [...demo.querySelectorAll('source')];
+  const demoPlayer = demo.closest('.demo-player');
+  const failedDemoSources = new Set();
   const videoError = document.getElementById('video-error');
   videoError.setAttribute('role', 'status');
   let selectedFilm = 'overview';
@@ -39,6 +41,7 @@
     selectedFilm = key;
     const film = films[key];
     demo.pause();
+    failedDemoSources.clear();
     videoError.hidden = true;
     tabs.forEach((item) => {
       const selected = item === tab;
@@ -52,7 +55,10 @@
     document.getElementById('demo-download').href = `assets/${key}.mp4`;
     demo.setAttribute('aria-label', film.title);
     demo.poster = `assets/${key}.jpg`;
-    demoSource.src = `assets/${key}.mp4`;
+    demoPlayer.dataset.shape = key === 'precision' ? 'portrait' : key === 'arm-hand' ? 'square' : 'landscape';
+    demoSources.forEach((source) => {
+      source.src = `assets/${key}.${source.dataset.format}`;
+    });
     // Changing films never starts audio. The native play control remains in charge.
     demo.load();
   }
@@ -77,12 +83,26 @@
   });
   const showDemoError = () => { videoError.hidden = false; };
   demo.addEventListener('error', showDemoError);
-  demoSource.addEventListener('error', showDemoError);
-  demo.addEventListener('loadeddata', () => { videoError.hidden = true; });
+  demoSources.forEach((source) => {
+    source.addEventListener('error', () => {
+      failedDemoSources.add(source);
+      // An unsupported format is not a failed film: let the next source load.
+      if (failedDemoSources.size === demoSources.length) showDemoError();
+    });
+  });
+  demo.addEventListener('loadstart', () => {
+    failedDemoSources.clear();
+    videoError.hidden = true;
+  });
+  demo.addEventListener('loadeddata', () => {
+    failedDemoSources.clear();
+    videoError.hidden = true;
+  });
 
   const hero = document.getElementById('hero-video');
   const heroButton = document.getElementById('hero-toggle');
-  const heroSource = hero.querySelector('source');
+  const heroSources = [...hero.querySelectorAll('source')];
+  const failedHeroSources = new Set();
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
   let heroIsVisible = false;
@@ -121,7 +141,8 @@
     }
     if (playPending || !hero.paused) return;
     if (!heroLoaded) {
-      heroSource.src = heroSource.dataset.src;
+      failedHeroSources.clear();
+      heroSources.forEach((source) => { source.src = source.dataset.src; });
       heroLoaded = true;
       hero.load();
     }
@@ -158,7 +179,10 @@
       autoplayBlocked = false;
       // A button activation is explicit permission to play, including reduced-motion mode.
       heroIsVisible = true;
-      if (hero.error) hero.load();
+      if (hero.error || failedHeroSources.size === heroSources.length) {
+        failedHeroSources.clear();
+        hero.load();
+      }
     }
     reconcileHero();
   });
@@ -174,8 +198,17 @@
     heroButton.title = 'Video unavailable. Retry, or use the full-film links below.';
   };
   hero.addEventListener('error', showHeroError);
-  heroSource.addEventListener('error', showHeroError);
-  hero.addEventListener('loadeddata', () => { heroButton.removeAttribute('title'); });
+  heroSources.forEach((source) => {
+    source.addEventListener('error', () => {
+      failedHeroSources.add(source);
+      if (failedHeroSources.size === heroSources.length) showHeroError();
+    });
+  });
+  hero.addEventListener('loadstart', () => { failedHeroSources.clear(); });
+  hero.addEventListener('loadeddata', () => {
+    failedHeroSources.clear();
+    heroButton.removeAttribute('title');
+  });
 
   if ('IntersectionObserver' in window) {
     const heroObserver = new IntersectionObserver((entries) => {

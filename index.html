@@ -35,7 +35,8 @@
       <div class="hero-stage wrap">
         <div class="film-frame">
           <video id="hero-video" muted loop playsinline preload="none" poster="assets/hero-poster.jpg" aria-label="Excerpt of MILE system operation; the complete video is available in the demonstrations section">
-            <source data-src="assets/hero.mp4" type="video/mp4">
+            <source data-src="assets/hero.webm" data-format="webm" type="video/webm">
+            <source data-src="assets/hero.mp4" data-format="mp4" type="video/mp4">
           </video>
           <div class="film-topline"><span>MILE / SYSTEM IN MOTION</span><span>EXCERPT</span></div>
           <button class="film-toggle" id="hero-toggle" type="button" aria-label="Play overview excerpt">Play excerpt <span aria-hidden="true">▶</span></button>
@@ -76,7 +77,7 @@
             <button role="tab" id="tab-arm-hand" aria-controls="demo-panel" aria-selected="false" tabindex="-1" data-demo="arm-hand"><span class="tab-index">04</span><span><strong>Arm-hand manipulation</strong><small>Coordinated autonomous tasks</small></span><span class="tab-arrow" aria-hidden="true">↗</span></button>
           </div>
           <div id="demo-panel" role="tabpanel" aria-labelledby="tab-overview" tabindex="0">
-            <div class="demo-player"><video id="demo-video" controls playsinline preload="none" poster="assets/overview.jpg" aria-label="MILE system operation and data collection"><source src="assets/overview.mp4" type="video/mp4">Your browser does not support HTML video. Use the MP4 link below.</video></div>
+            <div class="demo-player" data-shape="landscape"><video id="demo-video" controls playsinline preload="none" poster="assets/overview.jpg" aria-label="MILE system operation and data collection"><source src="assets/overview.webm" data-format="webm" type="video/webm"><source src="assets/overview.mp4" data-format="mp4" type="video/mp4">Your browser does not support HTML video. Use the MP4 link below.</video></div>
             <div class="demo-caption"><div><span class="eyebrow" id="demo-label">SUPPLEMENTARY VIDEO 1</span><h3 id="demo-title">MILE system operation and data collection</h3></div><a id="demo-download" href="assets/overview.mp4" target="_blank" rel="noopener">Open MP4 <span aria-hidden="true">↗</span></a></div>
             <p id="demo-description" class="demo-description">Putting on the exoskeleton, teleoperation, and multimodal demonstration collection.</p>
             <p id="video-error" class="video-error" hidden>The video could not load. Try opening the MP4 directly or reloading the page.</p>

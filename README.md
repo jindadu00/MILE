@@ -25,7 +25,7 @@ All assets use relative paths, so the same directory also works at a custom doma
 - `index.html`: text, authors, research figures, public paper links, BibTeX.
 - `style.css`: responsive layout, colours, typography.
 - `app.js`: video tabs, excerpt playback, citation copy, navigation state.
-- `assets/`: self-hosted images and MP4s. No Google Fonts, CDN scripts, YouTube, Google Drive embeds, analytics, or third-party runtime libraries.
+- `assets/`: self-hosted images and videos (WebM with MP4 fallback). No Google Fonts, CDN scripts, YouTube, Google Drive embeds, analytics, or third-party runtime libraries.
 
 Videos are presented with `object-fit: contain`; the original portrait, square, and landscape aspect ratios are preserved. The four complete videos keep their original timing and audio. The silent hero video is a 20-second excerpt (6–26 s) from Supplementary Video 1. The source precision video contains a 2× annotation; the website does not relabel it as real-time.
 
