@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#171a19">
-  <title>MILE — Human motion. Robot dexterity.</title>
+  <title>MILE — Human-first design for dexterous data collection</title>
   <meta name="description" content="MILE: A Mechanically Isomorphic Hand Exoskeleton and Visuotactile Robotic Hand for Data Collection in Dexterous Manipulation.">
-  <meta property="og:title" content="MILE — Human motion. Robot dexterity.">
-  <meta property="og:description" content="A human-first exoskeleton and visuotactile robotic hand for collecting dexterous manipulation demonstrations.">
+  <meta property="og:title" content="MILE — Human-first design for dexterous data collection">
+  <meta property="og:description" content="Human-first hardware design for 17-DoF joint-space teleoperation and multimodal data collection, with open-source fingertip visuotactile sensors.">
   <meta property="og:type" content="website">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
@@ -25,12 +25,15 @@
 
   <main id="main">
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-heading wrap">
-        <div class="eyebrow"><span class="live-dot"></span> A human-first approach to dexterous manipulation</div>
-        <div class="hero-title-row">
-          <h1 id="hero-title">Human motion.<br><span>Robot dexterity.</span></h1>
-          <div class="hero-intro"><p>Meet <strong>MILE.</strong><br>A wearable exoskeleton and a visuotactile robotic hand. Built to collect demonstrations that bring motion, vision, and touch together.</p><a class="text-link" href="#demonstrations">Explore the demonstrations <span aria-hidden="true">↗</span></a></div>
+      <div class="hero-grid wrap">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="live-dot"></span> MILE / TELEOPERATION &amp; MULTIMODAL LEARNING</p>
+          <h1 id="hero-title">Human-first design for <span>dexterous data collection.</span></h1>
+          <p class="hero-lead">17-DoF joint-space teleoperation.<br>Without online task-space retargeting.</p>
+          <p class="hero-description">A wearable exoskeleton, a mechanically corresponding robotic hand, and <strong>four open-source visuotactile fingertip sensors</strong>. MILE records synchronized vision, fingertip contact images, and joint motion for learning contact-rich manipulation.</p>
+          <div class="hero-links"><a class="text-link" href="#demonstrations">Explore the demonstrations <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/jindadu00/MILE-Tactile-Sensor" target="_blank" rel="noopener">Build the tactile sensor <span aria-hidden="true">↗</span></a></div>
         </div>
+        <figure class="hero-overview"><a href="assets/system-overview.png" target="_blank" rel="noopener" aria-label="Open the complete MILE system overview"><img src="assets/system-overview.png" width="700" height="571" alt="MILE system overview: the mechanically corresponding exoskeleton and MILE-Tac hand, direct joint-space teleoperation, and four fingertip tactile visualizations" fetchpriority="high"></a><figcaption>From wearable motion capture to robot-side touch.<br>Hardware correspondence enables direct joint-space commands.</figcaption></figure>
       </div>
       <div class="hero-specs wrap" aria-label="System overview"><div><strong>17</strong><span>degrees of freedom</span></div><div><strong>4</strong><span>visuotactile fingertips</span></div><a href="#system" aria-label="Discover the system">Discover MILE <span aria-hidden="true">↓</span></a></div>
     </section>
@@ -38,7 +41,7 @@
     <section class="paper-intro wrap" aria-label="Paper and authors">
       <p class="eyebrow">MILE / THE RESEARCH</p>
       <h2>A Mechanically Isomorphic Hand Exoskeleton and Visuotactile Robotic Hand for Data Collection in Dexterous Manipulation</h2>
-      <p class="authors"><a href="https://jindadu00.github.io/" target="_blank" rel="noopener">Jinda Du</a><sup>1,2,3,*</sup>, Jieji Ren<sup>1,2,*</sup>, Qiaojun Yu<sup>3</sup>, Ningbin Zhang<sup>1,2</sup>, Yu Deng<sup>4</sup>, Xingyu Wei<sup>1</sup>, Yufei Liu<sup>4</sup>, Guoying Gu<sup>1,2,†</sup>, Xiangyang Zhu<sup>1,2,†</sup></p>
+      <p class="authors">Jinda Du<sup>1,2,3,*</sup>, Jieji Ren<sup>1,2,*</sup>, Qiaojun Yu<sup>3</sup>, Ningbin Zhang<sup>1,2</sup>, Yu Deng<sup>4</sup>, Xingyu Wei<sup>1</sup>, Yufei Liu<sup>4</sup>, Guoying Gu<sup>1,2,†</sup>, Xiangyang Zhu<sup>1,2,†</sup></p>
       <div class="affiliations"><p><sup>1</sup> State Key Laboratory of Mechanical System and Vibration, School of Mechanical Engineering, Shanghai Jiao Tong University<br><sup>2</sup> Shanghai Key Laboratory of Intelligent Robotics, Shanghai Jiao Tong University</p><p><sup>3</sup> Shanghai Artificial Intelligence Laboratory<br><sup>4</sup> Humanoid Robot (Shanghai) Co., Ltd.<br><span>* Equal contribution &nbsp; † Corresponding authors</span></p></div>
       <div class="resource-links"><a class="button dark" href="https://arxiv.org/pdf/2512.00324" target="_blank" rel="noopener">Paper & supplementary <span aria-hidden="true">↗</span></a><a class="button outline" href="https://arxiv.org/abs/2512.00324" target="_blank" rel="noopener">arXiv <span aria-hidden="true">↗</span></a><a class="button outline" href="https://github.com/jindadu00/MILE-Tactile-Sensor" target="_blank" rel="noopener">Tactile Sensor CAD &amp; Build Guide <span aria-hidden="true">↗</span></a><a class="button outline" href="#citation">Cite this work <span aria-hidden="true">↓</span></a></div>
     </section>
@@ -46,20 +49,22 @@
     <section class="abstract-section wrap section" aria-labelledby="abstract-title">
       <p class="eyebrow">THE PAPER, IN BRIEF</p><h2 id="abstract-title">Abstract</h2>
       <div class="abstract-body"><p>Dexterous robotic hands perform complex, contact-rich manipulation. Imitation learning provides a route to such skills, but collecting human demonstrations with accurate hand actions and rich tactile information remains a key bottleneck. We present MILE, a teleoperation-based data-collection system comprising the wearable MILE exoskeleton and the mechanically corresponding MILE-Tac robotic hand. Because human-hand anatomy and wearability place tighter constraints on the high-DoF wearable, our human-first design begins with the MILE exoskeleton, equipped with custom modular joint encoders for accurate joint-angle acquisition. We then design the MILE-Tac robotic hand to share the exoskeleton's selected kinematic topology and joint-axis arrangement while satisfying robot-side implementation constraints, and equip its fingertips with compact visuotactile sensor modules. This correspondence enables direct exoskeleton-to-robot joint-space command transfer without online task-space inverse-kinematics retargeting. During teleoperation, the system synchronously records task-specific visual observations, four fingertip visuotactile streams, robot-hand proprioception, and exoskeleton-derived action commands. In a four-task teleoperation benchmark, MILE achieved a mean success rate of 76%, compared with 28% and 8% for glove-based and vision-based baselines, respectively. For downstream imitation learning, we trained paired ACT and DP policies with and without tactile input on MILE-collected demonstrations. The tactile-input variants achieved higher success rates in all paired evaluations.</p></div>
-      <figure class="source-figure overview-figure"><a href="assets/system-overview.png" target="_blank" rel="noopener" aria-label="Open the complete MILE system overview"><img src="assets/system-overview.png" width="700" height="571" alt="MILE system overview: the mechanically corresponding exoskeleton and MILE-Tac hand, direct joint-space teleoperation, and four fingertip tactile visualizations" loading="lazy"></a><figcaption>MILE system overview: hardware design, direct joint-space teleoperation, and tactile visualization and recording.</figcaption></figure>
+
     </section>
 
     <section class="system-section section" id="system" aria-labelledby="system-title">
       <div class="wrap">
-        <div class="section-heading"><div><p class="eyebrow">01 / THE SYSTEM</p><h2 id="system-title">Designed around the human.<br><span>Connected through touch.</span></h2></div><p>Start with the wearable. Build a mechanically corresponding robot hand. Capture the interaction.</p></div>
-        <figure class="source-figure design-figure"><a href="assets/human-first-design.png" target="_blank" rel="noopener" aria-label="Open the complete human-first hardware design figure"><img src="assets/human-first-design.png" width="1278" height="614" alt="Human-first hardware design: hand dimensions inform the exoskeleton through ergonomic approximation, followed by kinematic correspondence with the MILE-Tac robot hand" loading="lazy"></a><figcaption>Human-first hardware design: ergonomic approximation for the wearable and kinematic correspondence for the robotic hand.</figcaption></figure>
+        <div class="section-heading design-heading"><div><p class="eyebrow">01 / THE SYSTEM</p><h2 id="system-title">Human-first<br><span>hardware design.</span></h2></div><p>Human-hand anatomy and wearability define the starting constraints. The robotic hand is then built around the selected exoskeleton topology and joint-axis arrangement.</p></div>
+        <div class="design-principle"><p class="eyebrow">THE DESIGN PRIORITY</p><p><strong>Fit the wearable to the human.</strong> Carry its joint structure into the robot.</p><span>Human dimensions → wearable geometry → mechanically corresponding robotic hand</span></div>
+        <figure class="source-figure design-figure"><a href="assets/human-first-design.png" target="_blank" rel="noopener" aria-label="Open the complete human-first hardware design figure"><img src="assets/human-first-design.png" width="1278" height="614" alt="Human-first hardware design: representative human-hand dimensions guide the wearable through ergonomic approximation; the robot preserves the selected topology and joint-axis arrangement with corresponding structural dimensions scaled by 9/5" loading="lazy"></a><figcaption>Human anatomy guides the wearable geometry. Kinematic correspondence links the exoskeleton to MILE-Tac; corresponding structural dimensions are scaled by 9/5 for robot-side actuator packaging.</figcaption></figure>
+        <ol class="design-steps">
+          <li><span class="detail-number">01 / HUMAN → WEARABLE</span><h3>Prioritize anatomy and wearability.</h3><p>Hand dimensions, finger motion, and clearance around the joints guide the four-finger exoskeleton. It measures <strong>17 joint coordinates</strong>: five for the thumb and four each for the index, middle, and ring fingers. Shared joint and encoder modules support modular construction.</p></li>
+          <li><span class="detail-number">02 / WEARABLE → ROBOT</span><h3>Preserve the joint correspondence.</h3><p>MILE-Tac shares the exoskeleton’s <strong>selected kinematic topology and joint-axis arrangement</strong>. Corresponding structural dimensions are uniformly scaled by <strong>1.8×</strong> to accommodate actuators, while the robotic fingertips integrate compact visuotactile sensors.</p></li>
+          <li><span class="detail-number">03 / MEASUREMENTS → COMMANDS</span><h3>Transfer joint angles directly.</h3><p>Measured exoskeleton angles become robot-hand commands through a fixed correspondence, coordinate-direction calibration, and zero-position offsets. This mapping requires <strong>no online task-space inverse kinematics or nonlinear optimization</strong>.</p></li>
+        </ol>
+        <div class="design-outcome"><div><p class="eyebrow">WHY THIS MATTERS</p><h3>Establish correspondence in the hardware.</h3></div><p>Direct joint-space transfer avoids the task-space retargeting step and its potential kinematic distortions, singularity handling, or out-of-workspace command clipping. The correspondence is between the exoskeleton and MILE-Tac; the wearable remains an <strong>ergonomic approximation of the human hand</strong>, with limited strap adjustment for different hand sizes.</p></div>
         <figure class="hardware-figure"><a href="assets/hardware-components.png" target="_blank" rel="noopener" aria-label="Open the MILE hardware figure at full size"><img src="assets/hardware-components.png" alt="MILE exoskeleton, modular joint encoder, MILE-Tac robotic hand, and exploded fingertip visuotactile sensor" width="1280" height="287" loading="lazy"></a><figcaption>From left: MILE exoskeleton, modular encoder, MILE-Tac hand, and fingertip visuotactile sensor.</figcaption></figure>
-        <div class="system-details">
-          <article><span class="detail-number">01</span><h3>Wearable motion capture.</h3><p>A four-finger, 17-DoF exoskeleton uses custom modular encoders to acquire joint angles. The design begins with the constraints of the human hand and wearability.</p></article>
-          <article><span class="detail-number">02</span><h3>Mechanical correspondence.</h3><p>MILE-Tac shares the selected kinematic topology and joint-axis arrangement. Calibrated commands transfer in joint space without online task-space inverse-kinematics retargeting.</p></article>
-          <article><span class="detail-number">03</span><h3>Touch at the fingertips.</h3><p>Four compact visuotactile modules capture contact information alongside task-specific visual observations, robot-hand state, and exoskeleton-derived action commands.</p></article>
-        </div>
-        <div class="hardware-resource"><div><p class="eyebrow">OPEN HARDWARE / FINGERTIP VISUOTACTILE SENSOR</p><h3>Build the MILE tactile sensor.</h3><p>CAD files, bill of materials, fabrication and assembly instructions, and LED-control firmware.</p></div><a class="button dark" href="https://github.com/jindadu00/MILE-Tactile-Sensor" target="_blank" rel="noopener">Tactile Sensor CAD &amp; Build Guide <span aria-hidden="true">↗</span></a></div>
+        <div class="hardware-resource"><div><p class="eyebrow">OPEN HARDWARE / FINGERTIP VISUOTACTILE SENSOR</p><h3>Open-source fingertip visuotactile sensors.</h3><p>A camera inside each fingertip images the deformation of a soft gel under LED illumination, providing visual observations of contact. Four sensor streams are recorded alongside the other demonstration modalities.</p><p>The open-source release includes <strong>CAD files, a bill of materials, fabrication and assembly instructions, and LED-control firmware</strong>.</p></div><a class="button dark" href="https://github.com/jindadu00/MILE-Tactile-Sensor" target="_blank" rel="noopener">Tactile Sensor CAD &amp; Build Guide <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
 
@@ -122,6 +127,6 @@
 }</code></pre><span id="copy-status" role="status" class="sr-only"></span></div></div></section>
     <section class="acknowledgements-section section wrap" id="acknowledgements" aria-labelledby="acknowledgements-title"><p class="eyebrow">WITH THANKS</p><h2 id="acknowledgements-title">Acknowledgements</h2><p>The authors thank Yunfan Zhang, Qianyou Zhao, Yongyao Li, Xu Song, and Zheng Wang for advice on hardware design and learning policies; and Longyan Wu, Yueshi Dong, Jiapeng He, Nianzu Lv, Yuxuan Wu, Yutong Pei, Jinnuo Zhang, Zhenle Liu, Boyang Peng, and Junjie Xia for assistance with data collection and hardware renderings.</p></section>
   </main>
-  <footer class="wrap"><a class="wordmark" href="#">MILE<span class="brand-dot"></span></a><p>Motion. Vision. Touch.</p><a href="#main">Back to top <span aria-hidden="true">↑</span></a></footer>
+  <footer class="wrap"><a class="wordmark" href="#">MILE<span class="brand-dot"></span></a><p>Human-first design. Multimodal demonstrations.</p><a href="#main">Back to top <span aria-hidden="true">↑</span></a></footer>
 </body>
 </html>
