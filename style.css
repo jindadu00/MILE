@@ -10,3 +10,27 @@
 .film-topline{inset:auto 0 0;padding-bottom:22px;justify-content:flex-start;background:linear-gradient(transparent,#0004)}
 .film-topline span:last-child{display:none}
 @media(max-width:760px){.film-topline{padding-bottom:12px}.demo-player[data-shape="portrait"]{aspect-ratio:8/9}.demo-player[data-shape="square"]{aspect-ratio:145/144}}
+
+/* Complete research figures and source-site resources. */
+.source-figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:10px;padding:26px}
+.source-figure img{width:100%;height:auto;object-fit:contain}
+.overview-figure{max-width:720px;margin:38px auto 0}
+.design-figure{margin-bottom:28px}
+.precision-figure{max-width:1040px;margin-inline:auto}
+.abstract-section{max-width:1100px}
+.abstract-section .abstract-body{margin-top:28px;padding:0;font-size:15px;line-height:1.9}
+.hardware-resource{display:flex;justify-content:space-between;align-items:center;gap:40px;margin-top:44px;padding-top:32px;border-top:1px solid #cdd1c5}
+.hardware-resource .eyebrow{color:#9b512e;font-size:9px}
+.hardware-resource h3{font-size:22px;font-weight:500;letter-spacing:-.5px;margin:12px 0}
+.hardware-resource p:not(.eyebrow){font-size:13px;line-height:1.8;color:var(--muted);max-width:540px}
+.hardware-resource .button{flex-shrink:0}
+.dataset-section{background:#edeee7}
+.film-jump{margin-top:28px}
+.acknowledgements-section{max-width:1050px}
+.acknowledgements-section .eyebrow{color:#9b512e;margin-bottom:20px}
+.acknowledgements-section>p:last-child{font-size:14px;line-height:1.9;color:var(--muted);margin-top:24px}
+@media(max-width:760px){.source-figure{padding:14px 10px}.source-figure figcaption{font-size:9px;margin-top:16px}.abstract-section .abstract-body{font-size:13px}.overview-figure{margin-top:28px}.hardware-resource{display:block;margin-top:30px;padding-top:25px}.hardware-resource .button{margin-top:22px}.acknowledgements-section>p:last-child{font-size:13px}}
+
+/* Controls remain outside the footage so experimental annotations stay unobstructed. */
+.film-caption{align-items:center}.film-actions{display:flex;align-items:center;gap:22px}.film-toggle{position:static;flex-shrink:0}.film-actions>a{white-space:nowrap}
+@media(max-width:760px){.film-caption{align-items:flex-start;flex-direction:column;gap:12px}.film-actions{width:100%;justify-content:space-between}.film-toggle{padding:9px 12px}}

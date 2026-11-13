@@ -81,6 +81,16 @@
       tabs[next].focus();
     });
   });
+  document.querySelectorAll('[data-show-demo]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      const tab = tabs.find((item) => item.dataset.demo === link.dataset.showDemo);
+      if (!tab) return;
+      event.preventDefault();
+      selectFilm(tab);
+      document.getElementById('demonstrations').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+      tab.focus({ preventScroll: true });
+    });
+  });
   const showDemoError = () => { videoError.hidden = false; };
   demo.addEventListener('error', showDemoError);
   demoSources.forEach((source) => {
@@ -121,7 +131,7 @@
     symbol.setAttribute('aria-hidden', 'true');
     symbol.textContent = icon;
     heroButton.append(symbol);
-    heroButton.setAttribute('aria-label', `${label} of MILE system operation`);
+    heroButton.setAttribute('aria-label', `${label} of MILE autonomous manipulation`);
     heroButton.setAttribute('aria-pressed', String(playing));
   }
 
@@ -190,6 +200,7 @@
   hero.addEventListener('pause', paintHeroControl);
   hero.addEventListener('ended', paintHeroControl);
   const showHeroError = () => {
+    if (!heroLoaded) return;
     requestVersion += 1;
     playPending = false;
     autoplayBlocked = true;
