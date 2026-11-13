@@ -29,7 +29,7 @@ All assets use relative paths, so the same directory also works at a custom doma
 
 Videos are presented with `object-fit: contain`; the original portrait, square, and landscape aspect ratios are preserved. The four complete videos use the repository's current supplementary source files and retain those files' timing and audio. The source precision video contains a 2× annotation; the website does not relabel it as real-time.
 
-The opening is static: a descriptive human-first title, project introduction, system overview figure, demonstration and sensor-build links, and the 17-DoF / four-fingertip highlights. No video autoplays or loads in the hero. The four full videos in the demonstrations section load on demand through native HTML video controls. Readers can open MP4 files directly if their browser cannot play the inline video.
+The opening is static: a descriptive human-first title, project introduction, demonstration and sensor-build links, and the 17-DoF / four-fingertip highlights. The system overview is displayed below the paper information on a light background. No video autoplays or loads in the hero. The four full videos in the demonstrations section load on demand through native HTML video controls. Readers can open MP4 files directly if their browser cannot play the inline video.
 
 ## Access and hosting
 
@@ -47,6 +47,6 @@ Acknowledgements preserve all 15 people; the wording follows the current manuscr
 
 ## Publication and profile links
 
-Personal-homepage links are intentionally disabled until the author confirms paper acceptance. Restore both the project-page author link and the personal-homepage project link together after that confirmation; do not infer acceptance from a date or preprint update.
+The paper information names IEEE/ASME Transactions on Mechatronics with an explicit Under review label. Personal-homepage links are intentionally disabled until the author confirms paper acceptance. Restore both the project-page author link and the personal-homepage project link together after that confirmation; do not infer acceptance from a date or preprint update.
 
 The expanded human-first design explanation follows the author-provided main-paper Sections III-A–C and Supplementary Sections II–III. The claim of no online task-space retargeting applies to the calibrated exoskeleton-to-robot command mapping. The wearable remains an ergonomic approximation of the human hand.
