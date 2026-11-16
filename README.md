@@ -47,7 +47,7 @@ Acknowledgements preserve all 15 people; the wording follows the current manuscr
 
 ## Sharing
 
-`assets/mile-share-cover.png` is the titled social preview, using the author-provided system overview and the title **MILE — Human-first Design for Dexterous Data Collection**. Open Graph and large-image card metadata reference its absolute GitHub Pages URL. The six original research figures are retained separately and unchanged.
+`assets/mile-share-cover-qr.png` is the titled social preview, using the author-provided system overview and the title **MILE — Human-first Design for Dexterous Data Collection**. Its QR code links to https://jindadu00.github.io/MILE/ and was decoded from the exported full cover to verify the destination. Open Graph and large-image card metadata reference its absolute GitHub Pages URL. The original cover without the QR code remains available as `assets/mile-share-cover.png`. The six original research figures are retained separately and unchanged.
 
 ## Publication and profile links
 
