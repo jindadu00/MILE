@@ -29,7 +29,7 @@ All assets use relative paths, so the same directory also works at a custom doma
 
 Videos are presented with `object-fit: contain`; the original portrait, square, and landscape aspect ratios are preserved. The four complete videos use the repository's current supplementary source files and retain those files' timing and audio. The source precision video contains a 2× annotation; the website does not relabel it as real-time.
 
-The opening is static: a descriptive human-first title, project introduction, demonstration and sensor-build links, and the 17-DoF / four-fingertip highlights. The system overview is displayed below the paper information on a light background. No video autoplays or loads in the hero. The four full videos in the demonstrations section load on demand through native HTML video controls. Readers can open MP4 files directly if their browser cannot play the inline video.
+The opening is static: a descriptive human-first title, project introduction, demonstration and sensor-build links, and the 17-DoF / four-fingertip highlights. The system overview is displayed below the paper information on a light background. The four-video demonstration section and teleoperation benchmark follow the paper information, ahead of the detailed human-first design explanation. No video autoplays or loads in the hero. The four full videos in the demonstrations section load on demand through native HTML video controls. Readers can open MP4 files directly if their browser cannot play the inline video.
 
 ## Access and hosting
 
@@ -41,12 +41,16 @@ The website uses the current MILE manuscript, its four supplementary videos, and
 
 ## Original project-page completeness
 
-The six project figures from the Google Sites page are retained without changing their image bytes: system overview, human-first design, hardware components, data collection pipeline, dataset modalities, and the full exoskeleton precision plot. The full abstract is shown directly. Sensor release links appear both beside the paper and in the hardware section: https://github.com/jindadu00/MILE-Tactile-Sensor .
+The six project figures from the Google Sites page are retained without changing their image bytes: system overview, human-first design, hardware components, data collection pipeline, dataset modalities, and the full exoskeleton precision plot. The complete abstract is available in an expandable disclosure beside the paper information. Sensor release links appear both beside the paper and in the hardware section: https://github.com/jindadu00/MILE-Tactile-Sensor .
 
 Acknowledgements preserve all 15 people; the wording follows the current manuscript at the author's direction. The bibliography uses the current paper title rather than the older title in the original Google embed.
 
+## Sharing
+
+`assets/mile-share-cover.png` is the titled social preview, using the author-provided system overview and the title **MILE — Human-first Design for Dexterous Data Collection**. Open Graph and large-image card metadata reference its absolute GitHub Pages URL. The six original research figures are retained separately and unchanged.
+
 ## Publication and profile links
 
-The paper information names IEEE/ASME Transactions on Mechatronics with an explicit Under review label. Personal-homepage links are intentionally disabled until the author confirms paper acceptance. Restore both the project-page author link and the personal-homepage project link together after that confirmation; do not infer acceptance from a date or preprint update.
+The paper information names IEEE/ASME Transactions on Mechatronics with an explicit Under review label. A future opening teaser is deferred until the author confirms acceptance and selects the final promotional edit; the website does not enable one automatically. Personal-homepage links are intentionally disabled until the author confirms paper acceptance. Restore both the project-page author link and the personal-homepage project link together after that confirmation; do not infer acceptance from a date or preprint update.
 
 The expanded human-first design explanation follows the author-provided main-paper Sections III-A–C and Supplementary Sections II–III. The claim of no online task-space retargeting applies to the calibrated exoskeleton-to-robot command mapping. The wearable remains an ergonomic approximation of the human hand.
